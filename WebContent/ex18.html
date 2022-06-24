@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input id="left" type="text"> + <input id="right" type="text"> <br>
+<button id="btnPlus" type="button">더하기</button>
+<p>13</p>
+<p id="display">결과값</p>
+</body>
+<script type="text/javascript">
+	window.onload = function() {
+		var btnPlus = document.getElementById("btnPlus");
+		var display = document.getElementById("display");
+		var left = document.getElementById("left");
+		var right = document.getElementById("right");
+		
+		//버튼을 클릭했을 때(이벤트)
+		btnPlus.onclick = function () {
+			console.log("버튼클릭");
+			
+			var leftNo = left.value;
+			var rightNo = right.value;
+			console.log(leftNo);
+			console.log(rightNo);
+			
+			display.innerHTML = parseInt(leftNo) + parseInt(rightNo);
+		};
+		
+	};
+</script>
+</html>

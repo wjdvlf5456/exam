@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>자바스크립트</h1>
+
+	<h2>이벤트 (~할 때)</h2>
+
+	<div>
+		<button id="btn" type="button">테스트버튼</button>
+		<h3 id="display">이름출력영역</h3>
+	</div>
+
+</body>
+<script type="text/javascript">
+	window.onload = function() {
+		var testButton = document.getElementById("btn");
+		var testArea = document.getElementById("display");
+
+		console.log(testArea);
+		testButton.onclick = function() {
+			testArea.innerHTML = "<font color='red'>홍길동<font>";
+		};
+	};
+</script>
+</html>

@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<input id="left" type="text"> + <input id="right" type="text"> <br>
+<input id="left" type="text" value="123"> + <input id="right" type="text" value="1555"> <br>
 <button id="btnPlus" type="button">더하기</button>
 <p>13</p>
 <p id="display">결과값</p>
@@ -21,12 +21,12 @@
 		btnPlus.onclick = function () {
 			console.log("버튼클릭");
 			
-			var leftNo = left.value;
-			var rightNo = right.value;
-			console.log(leftNo);
-			console.log(rightNo);
+			var leftNo = parseInt(left.value);
+			var rightNo = parseInt(right.value);
+			var sum = leftNo + rightNo;
 			
-			display.innerHTML = parseInt(leftNo) + parseInt(rightNo);
+			display.innerHTML ="<font color='red'>" + sum + "<font>";
+			
 		};
 		
 	};

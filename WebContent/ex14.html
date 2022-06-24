@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var array = [];
+	array[0] = 1;
+	array[1] = 2.5;
+	array[2] = "안녕";
+	array[3] = "hello!!";
+	array[4] = 3>5;
+	
+	console.log(array[0]);
+	console.log(array[1]);
+	console.log(array[2]);
+	console.log(array[3]);
+	console.log(array[4]);
+	
+	console.log(array);
+	console.log("=======================================");
+	for (var i = 0; i < array.length; i++) {
+		var data = array[i];
+		console.log(data);
+	}
+	
+	console.log("=======================================");
+	console.log("\n");
+	
+	var array2 = [273,"문자열",true,plus(4,4),function(){return 5+100},[273,103]];
+	
+	console.log(array2[4]());	//함수값 반환
+	console.log(array2[5][1]);	//2차원 배열
+	console.log("\n");
+	
+	// 배열 맨 앞줄에 추가
+	array2.unshift(234);
+	
+	// 배열 맨 뒤의 요소 삭제
+	array2.pop;
+	
+	for (var i = 0; i < array2.length; i++) {
+		console.log(array2[i]);
+	}
+	
+	//정의(이름있는 함수)
+	function plus(a,b) {
+		sum = a+b;
+		return sum;
+		
+	}
+	
+	
+</script>
+</html>

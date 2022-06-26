@@ -9,32 +9,33 @@
 		<h1>계산기</h1>
 		
 		<input id ="calculate" type="text" value="">
+		<br>
 		
-		<button id="btnPlus" type="button">+</button>
-		<button id="btnMinus" type="button">-</button>
-		<button id="btnMul" type="button">*</button>
-		<button id="btnDiv" type="button">/</button>
-		<button id="btnResult" type="button">=</button>
 		<button id="btnClear" type="button">AC</button>
+		<button id="btnDiv" type="button">/</button>
 		<br>
 		
 		<button id="btnSeven" type="button">7</button>
 		<button id="btnEight" type="button">8</button>
 		<button id="btnNine" type="button">9</button>
+		<button id="btnMul" type="button">*</button>
 		<br>
 		
 		<button id="btnFour" type="button">4</button>
 		<button id="btnFive" type="button">5</button>
 		<button id="btnSix" type="button">6</button>
+		<button id="btnMinus" type="button">-</button>
 		<br>
 		
 		<button id="btnOne" type="button">1</button>
 		<button id="btnTwo" type="button">2</button>
 		<button id="btnThree" type="button">3</button>
+		<button id="btnPlus" type="button">+</button>
 		<br>
 		
 		<button id="btnZero" type="button">0</button>
 		<button id="btnDot" type="button">.</button>
+		<button id="btnResult" type="button">=</button>
 		
 		<p id = display></p>
 		
@@ -76,15 +77,113 @@
 			}
 			
 			//============ 결과값 ============
-			btnDiv.onclick = function () {
+			btnResult.onclick = function () {
 				console.log("=");
+				var leftNo = "";
+				var rightNo = "";
+				var sign = "";
+				var change ="";
+				
+				var arr = calculate.value.split(""); 
+				
+				for (var i = 0; i < arr.length; i++) {
+					if (arr.indexOf('+')==i) {
+						change = parseInt(i);
+						sign = arr[i];
+						break;
+					}
+					leftNo += arr[i];
+				}
+				
+				for (var i = change+1; i < arr.length; i++) {
+				rightNo += arr[i];	
+				}
+				console.log(leftNo);
+				console.log(rightNo);
+				console.log(sign);
+				
+				calculate.value = parseInt(leftNo) + parseInt(rightNo);
+				
+				
 			}
 			
 			//============ 초기화 ============
 			btnClear.onclick = function () {
 				console.log("초기화");
 				
-				calculate.value = 0;
+				calculate.value = "";
+				
+			}
+			
+			//======================== 숫자창 ========================
+			//============ 1 ============
+			btnOne.onclick = function () {
+				console.log("1");
+				calculate.value += 1;
+				
+			}
+			//============ 2 ============
+			btnTwo.onclick = function () {
+				console.log("2");
+				calculate.value += 2;
+				
+			}
+			//============ 3 ============
+			btnThree.onclick = function () {
+				console.log("3");
+				calculate.value += 3;
+				
+			}
+			//============ 4 ============
+			btnFour.onclick = function () {
+				console.log("4");
+				calculate.value += 4;
+				
+			}
+			//============ 5 ============
+			btnFive.onclick = function () {
+				console.log("5");
+				calculate.value += 5;
+				
+			}
+			//============ 6 ============
+			btnSix.onclick = function () {
+				console.log("6");
+				calculate.value += 6;
+				
+			}
+			//============ 7 ============
+			btnSeven.onclick = function () {
+				console.log("7");
+				calculate.value += 7;
+				
+			}
+			//============ 8 ============
+			btnEight.onclick = function () {
+				console.log("8");
+				calculate.value += 8;
+				
+			}
+			//============ 9 ============
+			btnNine.onclick = function () {
+				console.log("9");
+				calculate.value += 9;
+				
+			}
+			//============ 0 ============
+			btnZero.onclick = function () {
+				console.log("0");
+				calculate.value += 0;
+				
+			}
+			//============ 0 ============
+			btnDot.onclick = function () {
+				console.log(".");
+				// 이전에 소수점이 있으면 출력하지 않는다.
+				if (calculate.value.indexOf('.')==-1) {
+				calculate.value += ".";
+
+				}
 				
 			}
 			

@@ -12,6 +12,7 @@
 		<br>
 		
 		<button id="btnClear" type="button">AC</button>
+		<button id="btnBack" type="button">⬅︎</button>
 		<button id="btnDiv" type="button">/</button>
 		<br>
 		
@@ -50,6 +51,7 @@
 			var btnMul = document.getElementById("btnMul");
 			var btnDiv = document.getElementById("btnDiv");
 			var btnClear = document.getElementById("btnClear");
+			var btnBack = document.getElementById("btnBack");
 			
 			//============ 더하기 ============
 			btnPlus.onclick = function () {
@@ -130,6 +132,22 @@
 				console.log("초기화");
 				
 				calculate.value = "";
+				
+			}
+			//============ 한 칸 지우기 ============
+			btnBack.onclick = function () {
+				console.log("한 칸 지우기");
+				
+				// 배열 마지막 제거
+				var arr = calculate.value.split("");
+				arr.pop();
+				
+				var result = "";
+				for (var i = 0; i < arr.length; i++) {
+					result += arr[i];
+				}	
+				
+				calculate.value = result;
 				
 			}
 			

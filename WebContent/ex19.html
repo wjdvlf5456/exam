@@ -8,19 +8,86 @@
 	<body>
 		<h1>계산기</h1>
 		
-		<button id="btnPlus" type="button">더하기</button>
-		<button id="btnMinus" type="button">빼기</button>
-		<button id="btnMul" type="button">곱하기</button>
-		<button id="btnDiv" type="button">나누기</button>
-		<button id="btnClear" type="button">초기화</button>
+		<input id ="calculate" type="text" value="">
+		
+		<button id="btnPlus" type="button">+</button>
+		<button id="btnMinus" type="button">-</button>
+		<button id="btnMul" type="button">*</button>
+		<button id="btnDiv" type="button">/</button>
+		<button id="btnResult" type="button">=</button>
+		<button id="btnClear" type="button">AC</button>
+		<br>
+		
+		<button id="btnSeven" type="button">7</button>
+		<button id="btnEight" type="button">8</button>
+		<button id="btnNine" type="button">9</button>
+		<br>
+		
+		<button id="btnFour" type="button">4</button>
+		<button id="btnFive" type="button">5</button>
+		<button id="btnSix" type="button">6</button>
+		<br>
+		
+		<button id="btnOne" type="button">1</button>
+		<button id="btnTwo" type="button">2</button>
+		<button id="btnThree" type="button">3</button>
+		<br>
+		
+		<button id="btnZero" type="button">0</button>
+		<button id="btnDot" type="button">.</button>
+		
+		<p id = display></p>
 		
 	</body>
 	
 	<script type="text/javascript">
 		window.onload = function () {
 			console.log("버튼클릭");
+			var calculate = document.getElementById("calculate");
+			var btnPlus = document.getElementById("btnPlus");
+			var btnMinus = document.getElementById("btnMinus");
+			var btnMul = document.getElementById("btnMul");
+			var btnDiv = document.getElementById("btnDiv");
+			var btnClear = document.getElementById("btnClear");
 			
-			var leftNo
+			//============ 더하기 ============
+			btnPlus.onclick = function () {
+				console.log("더하기");
+				
+				calculate.value += "+";
+			}
+			
+			//============ 빼기 ============
+			btnMinus.onclick = function () {
+				console.log("빼기");
+				calculate.value += "-";
+			}
+			
+			//============ 곱하기 ============
+			btnMul.onclick = function () {
+				console.log("곱하기");
+				calculate.value += "*";
+			}
+			
+			//============ 나누기 ============
+			btnDiv.onclick = function () {
+				console.log("나누기");
+				calculate.value += "/";
+			}
+			
+			//============ 결과값 ============
+			btnDiv.onclick = function () {
+				console.log("=");
+			}
+			
+			//============ 초기화 ============
+			btnClear.onclick = function () {
+				console.log("초기화");
+				
+				calculate.value = 0;
+				
+			}
+			
 		}		
 	</script>
 </html>

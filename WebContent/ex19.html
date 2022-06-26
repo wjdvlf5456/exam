@@ -87,7 +87,7 @@
 				var arr = calculate.value.split(""); 
 				
 				for (var i = 0; i < arr.length; i++) {
-					if (arr.indexOf('+')==i) {
+					if (arr.indexOf('+')==i || arr.indexOf('-')==i || arr.indexOf('*')==i || arr.indexOf('/')==i) {
 						change = parseInt(i);
 						sign = arr[i];
 						break;
@@ -98,13 +98,31 @@
 				for (var i = change+1; i < arr.length; i++) {
 				rightNo += arr[i];	
 				}
-				console.log(leftNo);
-				console.log(rightNo);
-				console.log(sign);
 				
-				calculate.value = parseInt(leftNo) + parseInt(rightNo);
+				var left = parseInt(leftNo);
+				var right = parseInt(rightNo);
 				
+				var result = Number(0);
 				
+				switch (sign) {
+				case '+':
+					result += left + right;
+					break;
+				case '-':
+					result += left - right;
+					break;
+				case '*':
+					result += left * right;
+					break;
+				case '/':
+					result += left / right;
+					break;
+
+				default:
+					break;
+				}
+				
+				calculate.value = result;
 			}
 			
 			//============ 초기화 ============
